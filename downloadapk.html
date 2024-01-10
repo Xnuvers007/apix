@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                text-align: center;
+                border: 2px solid #ccc;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .download-btn {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.3s;
+            }
+            .download-btn:hover {
+                background-color: #0056b3;
+            }
+            .download-btn.animate {
+                transform: scale(1.1);
+            }
+            .server-selection {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Unduh Aplikasi Kami</h1>
+            <p>Pilih server unduhan:</p>
+            <div class="server-selection"><button class="download-btn" onclick='downloadApp("server1")'>Server 1</button> &nbsp;&nbsp;&nbsp;<button class="download-btn" onclick='downloadApp("server2")'>Server 2</button></div>
+        </div>
+        <script>
+            function animateButton(e) {
+                e.classList.add("animate"),
+                    setTimeout(() => {
+                        e.classList.remove("animate");
+                    }, 300);
+            }
+            function downloadApp(e) {
+                let t;
+                animateButton(event.target), "server1" === e ? (t = "https://tr.deployers.repl.co/apk/API%20Xnuvers007-1.apk") : "server2" === e && (t = "https://tr.deployers.repl.co/apk/API%20Xnuvers007-2.apk"), window.open(t, "_blank");
+            }
+        </script>
+        <script>
+            document.addEventListener("keydown", function (e) {
+                e.ctrlKey && "u" === e.key && e.preventDefault();
+            }),
+                document.addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                }),
+                document.addEventListener("selectstart", function (e) {
+                    e.preventDefault();
+                }),
+                document.addEventListener("dragstart", function (e) {
+                    e.preventDefault();
+                }),
+                document.addEventListener("cut", function (e) {
+                    e.preventDefault();
+                }),
+                document.addEventListener("copy", function (e) {
+                    e.preventDefault();
+                }),
+                document.addEventListener("paste", function (e) {
+                    e.preventDefault();
+                });
+        </script>
+    </body>
+</html>
